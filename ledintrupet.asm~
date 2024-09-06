@@ -1,0 +1,18 @@
+org 0000h
+lcall main
+org 0003h
+lcall main
+org 0050h
+main:
+setb p1.0
+mov tmod,#00000001b
+mov tl0,#00h
+mov th0,#00h
+setb tr0
+mov r0,#75d
+mov IE,#10000010b
+djnz r0,main
+clr p1.0
+ret
+
+
